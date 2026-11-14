@@ -1,0 +1,38 @@
+TASK 06 – DEADLOCK AND INTER-THREAD COMMUNICATION
+
+Test:
+Producer generates 10 items.
+Consumer processes all 10 items.
+Buffer capacity: 5.
+
+Result:
+10 items produced.
+10 items consumed.
+All items processed successfully.
+
+STATUS: PASSED
+
+CONCEPTS:
+1. wait() pauses a thread and releases the object's monitor.
+2. notifyAll() wakes waiting threads.
+3. while checks the condition again after waking.
+4. synchronized protects shared buffer data.
+5. Circular queue uses modulo operation.
+
+DEADLOCK:
+Deadlock occurs when threads wait indefinitely for locks held by each other.
+
+PREVENTION:
+- Acquire locks in a consistent order.
+- Avoid unnecessary nested locks.
+- Use tryLock() with timeout where appropriate.
+
+ALTERNATIVE:
+ArrayBlockingQueue provides built-in thread-safe producer-consumer operations.
+
+COMPLEXITY:
+Time: O(1) per put() or take().
+Space: O(5) = O(1) for the fixed buffer.
+
+CONCLUSION:
+wait() and notifyAll() support safe communication between producer and consumer threads.
