@@ -1,0 +1,27 @@
+TASK 02 – USER-DEFINED EXCEPTIONS AND PROPAGATION
+
+Test 1: Successful Submission
+Input: answer01.pdf
+Output: Saved answer01.pdf
+Status: PASSED
+
+Test 2: Storage Failure
+Input: answer02.pdf
+Output: Could not store answer02.pdf
+Cause: Disk quota exceeded
+Status: PASSED
+
+Test 3: Invalid Submission
+Input: Empty filename
+Output: Invalid submission file
+Status: PASSED
+
+EXCEPTION PROPAGATION:
+Storage → SubmissionService → SubmissionController
+
+EXCEPTION CHAINING:
+The original IOException is preserved using the cause parameter.
+getCause() retrieves the original exception.
+
+CONCLUSION:
+Custom checked exceptions handle storage failures, while unchecked exceptions handle invalid submissions.
