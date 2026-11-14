@@ -1,0 +1,30 @@
+TASK 05 – RACE CONDITIONS AND SYNCHRONIZATION
+
+Scenario:
+20 customers attempted to book 10 cinema seats.
+
+Result:
+Seats sold: 10
+Available seats: 0
+
+Status: PASSED
+
+SYNCHRONIZATION:
+- synchronized method allows only one thread at a time to execute the booking operation on the same object.
+- Prevents race conditions.
+- Prevents double booking.
+- join() waits for all customer threads to finish.
+
+ALTERNATIVES:
+1. synchronized method
+2. synchronized block
+3. ReentrantLock
+4. AtomicBoolean array
+5. ConcurrentHashMap
+
+COMPLEXITY:
+Time: O(1) per booking attempt.
+Space: O(s), where s is the number of seats.
+
+CONCLUSION:
+Synchronization protects shared data and ensures thread-safe seat booking.
