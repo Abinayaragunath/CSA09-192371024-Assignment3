@@ -1,0 +1,31 @@
+TASK 04 – THREAD CREATION AND LIFECYCLE
+
+1. Four station threads created using Runnable.
+2. start() launched each thread.
+3. sleep() paused execution temporarily.
+4. join() waited for thread completion.
+5. isAlive() returned false after completion.
+6. Thread priorities were configured.
+7. Station 4 was configured as a daemon thread.
+
+OBSERVED OUTPUT:
+All four stations started and completed.
+All threads reported isAlive() = false.
+Station 3 priority = 10.
+Station 4 daemon = true.
+
+CONCEPTS:
+NEW → RUNNABLE → TERMINATED
+
+start() creates a new execution thread.
+Calling run() directly does not create a new thread.
+join() waits for another thread to finish.
+sleep() pauses the current thread.
+Priority is a scheduling hint, not a guarantee.
+
+COMPLEXITY:
+Time: O(1) work per station; four stations give O(1) total work.
+Space: O(1) for the fixed four threads, excluding thread-stack memory.
+
+CONCLUSION:
+Java threads allow multiple independent tasks to execute concurrently.
