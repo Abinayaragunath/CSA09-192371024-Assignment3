@@ -1,0 +1,3 @@
+Laptop,50000
+ERROR
+Tablet,15000
