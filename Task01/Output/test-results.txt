@@ -1,0 +1,31 @@
+TASK 01 – ATM SIMULATION TEST RESULTS
+
+Test 1: Insufficient Balance
+Input: 192371024, 20000
+Result: Insufficient account balance.
+Status: PASSED
+
+Test 2: Negative Withdrawal
+Input: 192371024, -500
+Result: Withdrawal amount must be positive.
+Status: PASSED
+
+Test 3: Invalid Account
+Input: 111111111, 500
+Result: Invalid account number.
+Status: PASSED
+
+Test 4: Alphabetic Input
+Input: abc, 500
+Result: Please enter numeric values.
+Status: PASSED
+
+Test 5: Missing Card File
+Input: 192371024, 500
+Result: Card reader file is missing.
+Status: PASSED
+
+Test 6: Successful Withdrawal
+Input: 192371024, 2000
+Result: Remaining balance: Rs. 8000.00
+Status: PASSED

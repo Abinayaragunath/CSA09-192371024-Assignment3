@@ -1,0 +1,35 @@
+# TASK 01 – UNCAUGHT EXCEPTION STACK TRACE
+
+## Program
+StackTraceDemo.java
+
+## Exception Generated
+IllegalArgumentException
+
+## Input
+Withdrawal amount = -500
+
+## Actual Output
+
+```text
+ATM Transaction Started
+Exception in thread "main" java.lang.IllegalArgumentException: Withdrawal amount must be positive
+    at StackTraceDemo.withdraw(StackTraceDemo.java:6)
+    at StackTraceDemo.main(StackTraceDemo.java:16)
+```
+
+## Stack Trace Explanation
+
+1. Exception in thread "main": The exception occurred in the main thread.
+2. IllegalArgumentException: The exception type.
+3. Withdrawal amount must be positive: The error message.
+4. StackTraceDemo.withdraw(): The method where the exception originated.
+5. StackTraceDemo.main(): The method that called withdraw().
+
+## Observation
+
+The exception was not handled using try-catch. Therefore, the program terminated before printing "ATM Transaction Completed".
+
+## Conclusion
+
+A stack trace helps developers identify the exception type, error message, source line and method call sequence. It is useful for debugging Java applications.

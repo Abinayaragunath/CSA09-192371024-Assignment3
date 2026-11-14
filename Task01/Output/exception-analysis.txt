@@ -1,0 +1,65 @@
+# TASK 01 – ATM SIMULATION: EXCEPTION ANALYSIS
+
+## 1. Throwable Exception Hierarchy
+
+```text
+                    Throwable
+                   /         \
+                Error       Exception
+                           /         \
+                    IOException    RuntimeException
+                        |               |
+                FileNotFoundException  InputMismatchException
+                                        IllegalArgumentException
+                                        InvalidWithdrawalException
+                                        InsufficientBalanceException
+```
+
+## 2. Failure Classification Table
+
+| Failure Point | Exception | Type | Where It Is Caught |
+|---|---|---|---|
+| Letters instead of numbers | InputMismatchException | Unchecked | main() |
+| Invalid account number | IllegalArgumentException | Unchecked | main() |
+| Negative withdrawal | InvalidWithdrawalException | Unchecked | main() |
+| Insufficient balance | InsufficientBalanceException | Unchecked | main() |
+| Missing card-reader file | FileNotFoundException | Checked | main() |
+| JVM memory exhaustion | OutOfMemoryError | Error | Not caught |
+
+## 3. Justification for Catch Block Order
+
+Java executes the first matching catch block.
+
+The specific exception types should be handled before broader exception types.
+
+Our catch blocks handle:
+1. InputMismatchException
+2. InvalidWithdrawalException and InsufficientBalanceException using multi-catch.
+3. IllegalArgumentException
+4. FileNotFoundException
+
+If a broad catch(Exception e) is placed before a narrower catch block, Java generates a compile-time error because the narrower catch becomes unreachable.
+
+## 4. Purpose of Finally Block
+
+The finally block executes when the withdraw() method exits normally or because of an exception.
+
+In our ATM program, it prints the transaction completion message.
+
+It helps ensure cleanup operations are performed regardless of transaction success or failure.
+
+However, finally is not guaranteed to execute if the JVM terminates abruptly.
+
+## 5. Joint Design Question
+
+### Should the ATM catch every exception using catch(Exception e)?
+
+Catching Exception is acceptable at a top-level application boundary for logging unexpected failures and preventing an application from crashing.
+
+However, catching every exception in one block loses specific error handling and makes debugging difficult.
+
+Separate catch blocks provide meaningful error messages and allow different failures to be handled appropriately.
+
+## 6. Conclusion
+
+Exception handling makes the ATM application more reliable by identifying errors, preventing invalid withdrawals, handling missing files and ensuring transaction cleanup.

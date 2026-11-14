@@ -1,0 +1,18 @@
+TASK 01 – ATM WITHOUT EXCEPTIONS
+
+Test: Successful Withdrawal
+
+Input:
+Account Number: 192371024
+Withdrawal Amount: 2000
+
+Output:
+Withdrawal successful.
+Remaining balance: Rs. 8000.00
+ATM session closed.
+
+Status: PASSED
+
+Approach:
+The program uses Scanner validation methods and integer return codes
+instead of throwing and catching exceptions.

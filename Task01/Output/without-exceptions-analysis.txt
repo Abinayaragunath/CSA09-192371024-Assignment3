@@ -1,0 +1,45 @@
+TASK 01 – ATM WITHOUT EXCEPTIONS
+
+Test Input:
+Account Number: 192371024
+Withdrawal Amount: 2000
+
+Actual Output:
+ATM WITHOUT EXCEPTIONS
+================================
+Enter account number: 192371024
+Enter withdrawal amount: 2000
+Withdrawal successful.
+Remaining balance: Rs. 8000.00
+ATM session closed.
+
+RESULT:
+The withdrawal was successful.
+The remaining balance is Rs. 8000.00.
+
+COMPARISON: EXCEPTIONS VS ERROR CODES
+
+1. Exception Handling:
+- Uses try, catch, throw and finally.
+- Provides meaningful exception messages.
+- Useful for handling unexpected failures.
+- Throwing exceptions has additional runtime overhead.
+
+2. Error Code Handling:
+- Uses return values such as 0, -1, -2 and -3.
+- Does not throw custom exceptions.
+- Requires manual checking of return values.
+- Can be simpler and faster for routine validation failures.
+
+TIME AND SPACE COMPLEXITY
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+
+Both implementations perform a fixed number of validation checks and use a constant amount of extra space.
+
+CONCLUSION:
+Exception handling improves error reporting and separates error-handling logic from normal execution. Error codes avoid exception creation and are useful for expected validation failures.
+
+NOTE:
+This alternative program does not perform the card-file validation used in ATM.java.
