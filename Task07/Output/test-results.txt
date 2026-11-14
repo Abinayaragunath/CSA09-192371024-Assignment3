@@ -1,0 +1,31 @@
+TASK 07 – CONCURRENT FAULT-TOLERANT PROCESSOR
+
+Total files: 10000
+Successful files: 9990
+Failed files: 10
+Status: PASSED
+
+THREAD POOL PERFORMANCE:
+
+Pool Size 1: 547 ms
+Pool Size 2: 266 ms
+Pool Size 4: 198 ms
+Pool Size 8: 135 ms
+
+OBSERVATIONS:
+1. ExecutorService manages worker threads.
+2. Callable tasks process files independently.
+3. Future retrieves task results.
+4. ExecutionException handles task failures.
+5. Processing continues when individual files fail.
+6. Larger thread pools improved performance in this run.
+
+COMPLEXITY:
+Time: O(n) total file-processing work, excluding concurrency overhead.
+Space: O(n) for the Future list and task results.
+
+CONCLUSION:
+A fixed thread pool provides controlled concurrency and fault isolation for large file-processing workloads.
+
+NOTE:
+This experiment injects corrupt files. Missing-file handling is implemented but was not separately tested.
